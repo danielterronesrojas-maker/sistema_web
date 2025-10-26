@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros en venta</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <div id="loader">
+        <div class="car"></div>
+    </div>
+    <a href="#main-content" class="skip-link">Saltar el contenido</a>
+
+    <header>
+        <nav aria-label="Modelos de Carros">
+            <div class="logo-container">
+                <img src="media/logo.jpg" alt="logo-consesionario" class="logo-pareja">
+                <h1 class="site-title">Carros en venta</h1>
+            </div>
+            <div class="nav-links">
+                <a href="registro.html">Regístrate</a>
+                <a href="cotiza.html">Cotiza tu carro</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section id="inicio" class="hero" role="banner">
+            <div class="hero-content">
+                <h2><span id="typing"></span><span class="cursor">|</span></h2>
+                <p>¡Bienvenido a nuestra página! Aquí encontrarás los mejores carros al mejor precio, con seguridad, confianza y garantía. Conduce tu sueño hoy mismo y disfruta de un servicio pensado para ti.</p>
+                <div class="registro-button">
+                    <a href="registro.html" class="registro-btn">Regístrate</a>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="contacto" class="contact-info">
+            <h3>Contáctanos</h3>
+            <p>Teléfono: +51 957 342 252</p>
+            <p>Email: carrosenventa@gmail.com </p>
+            <p>Dirección: Av. Los frenos 173</p>
+        </section>
+    </main>
+
+    <a href="" class="whatsapp-float" aria-label="whatsapp">
+        <img src="media/whats.png" alt="Link a nuestro Whatsapp">
+    </a>
+
+    <footer>
+        <div class="footer-link">
+            <a href="https://es.wikipedia.org/wiki/Pol%C3%ADtica_de_privacidad" target="_blank">Politicas de privacidad</a>
+            <a href="https://es.wikipedia.org/wiki/T%C3%A9rminos_y_condiciones_de_uso" target="_blank">Términos y condiciones</a>
+            <a href="https://www.google.com/maps/place/Av.+los+Fresnos,+La+Molina+15024/@-12.1017922,-76.9425014,17z/data=!3m1!4b1!4m6!3m5!1s0x9105c741c78f2ed7:0x5208855e5add30b9!8m2!3d-12.1017922!4d-76.9425014!16s%2Fg%2F1tfm2j1r?hl=es-419&entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Mapa del sitio</a>
+        </div>
+        <p>&copy; 2025 Carros en venta | Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.getElementById('loader');
+
+            const loader = document.getElementById("loader");
+            loader.classList.add("hidden");
+
+            setTimeout(() => loader.remove(), 600);
+        });
+
+        const txts = ['Bienvenidos a Carros en Venta', 'Confianza', 'Seguridad', 'Económicos'];
+
+        let idx = 0, char = 0;
+
+        function type() {
+            const piper = document.getElementById("typing");
+            if (char < txts[idx].length){
+                piper.textContent += txts[idx].charAt(char);
+                char++;
+                setTimeout(type, 100);
+            } else {
+                setTimeout(erase, 2000);
+            }
+        }
+
+        function erase() {
+            const piper = document.getElementById('typing');
+            if (char > 0) {
+                piper.textContent = txts[idx].substring(0, char-1);
+                char--;
+                setTimeout(erase, 50);
+            } else {
+                idx = (idx + 1) % txts.length;
+                setTimeout(type, 500);
+            }
+        }
+        type();
+
+
+    </script>
+</body>
+</html>

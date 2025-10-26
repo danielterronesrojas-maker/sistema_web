@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros en venta</title>
+    <meta name="description" content="Registra tus datos para cotizar el carro de tus sueños">
+    <meta name="keywords" content="Registrar usuario, carros, venta de carros, cotizar carro">
+    <link rel="icon" href="media/logo.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="registro.css">
+</head>
+
+
+<body>
+    <header>
+        <nav aria-label="Modelos de Carros">
+            <div class="logo-container">
+                <img src="media/logo.jpg" alt="logo-consesionario" class="logo-pareja">
+                <h1 class="site-title">Carros en venta</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="registro.html">Regístrate</a>
+                <a href="cotiza.html">Cotiza tu carro</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section id="registro-user-car">
+        <div class="logo-header">
+            <img src="media/logo.jpg" alt="logo-carros-en-venta">
+            <h1>Carros en Venta</h1>
+        </div>
+            <h3>Antes de cotizar tu vehículo, REGISTRATE</h3>
+                <form id="formulario-usuario">
+                        <div class="mortis">
+                            <label for="nombre">Nombre completo:</label>
+                            <input type="text" name="nombre" placeholder="Ingrese su nombre completo" required id="nombre">
+                        </div>
+
+                        <div class="mortis">
+                            <label for="password">Ingresar contraseña</label>
+                            <input type="password" name="contrasena" id="password" placeholder="Ingrese su contraseña" required id="contrasena">
+
+                        <div class="mortis">
+                            <label for="correo">Ingresar correo electronico:</label>
+                            <input type="correo" name="correo" placeholder="Ingrese su correo electronico" required id="correo">
+                        </div>
+
+                        <div class="mortis">
+                            <label for="telefono">Ingresar telefono:</label>
+                            <input type="tel" name="telefono" placeholder="Ingrese su telefono" required id="telefono">
+                        </div>
+
+                        <div class="carl">
+                            <button type="submit" id="registrar-usuario">
+                                Registrarse
+                            </button>
+                        </div>
+                </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2025 Carros en Venta. Todos los derechos reservados.
+        </p>
+    </footer>
+
+    <script src="registro-usuario.js"></script>
+</body>
+</html>

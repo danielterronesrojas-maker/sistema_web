@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros en venta</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="cotiza.css">
+</head>
+
+
+<body>
+    <header>
+        <nav aria-label="Cotiza tu carro">
+            <div class="logo-container">
+                <img src="media/logo.jpg" alt="logo-consesionario" class="logo-pareja">
+                <h1 class="site-title">Carros en venta</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="registro.html">Regístrate</a>
+                <a href="cotiza.html">Cotiza tu carro</a>
+            </div>
+        </nav>
+    </header>
+
+   <main id="main">
+        <section id="cotiza-tu-carro">
+        <div class="logo-header">
+            <img src="media/logo.jpg" alt="logo-carros-en-venta">
+            <h1>Carros en Venta</h1>
+        </div>
+            <h2>Solicita Una Cotización</h2>
+                <form method="post">
+            <h3>¡Comunícate con nosotros y recibe la información que necesitas de tu próximo carro!</h2>
+                <div class="mandy">
+
+                <div class="rosa">
+                    <input type="carro" name="carro" placeholder="Carro a cotizar" required id="carro">
+                </div>
+
+                <div class="rosa">
+                    <input type="motor" name="motor" placeholder="Elige el tipo de motor del carro" required id="motor">
+                </div>
+
+                <div class="rosa">
+                    <input type="ciudad" name="ciudad" placeholder="Elige tu ciudad" required id="ciudad">
+                </div>
+
+                <div class="rosa">
+                    <input type="consecionario" name="consecionario" placeholder="Elige tu consecionario" required id="consecionario">
+                </div>
+
+                <div class="jessie">
+                    <button type="submit" id="cotizar-carro">
+                        Solicitar Cotización
+                    </button>
+                </div>
+
+                    </div>
+                </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2025 Carros en Venta. Todos los derechos reservados.
+        </p>
+    </footer>
+
+    <script src="solicitar-cotizacion.js"></script>
+
+</body>
+</html>
