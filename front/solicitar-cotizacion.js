@@ -13,11 +13,15 @@ function solicitarCotizacion(event){
         const carro = document.getElementById('carro').value;
         const motor = document.getElementById('motor').value;
         const ciudad = document.getElementById('ciudad').value;
-        const consesionario = document.getElementById('consesionario').value;
+        const consesionario = document.getElementById('consecionario').value;
         const cotizacion = {
-                    cotizacion : carro, motor, ciudad,consesionario};
+                    carro: carro,
+                    motor: motor, 
+                    ciudad: ciudad,
+                    consesionario: consesionario
+                };
         try{
-            const response = yield fetch(`${API_URL_USUARIO}/cotizaciones`, {
+            const response = yield fetch(`${API_URL_USUARIO}/cotizar`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json'},
                 body: JSON.stringify(cotizacion),
@@ -37,7 +41,6 @@ function solicitarCotizacion(event){
         
     });
 }
-
 document
   .getElementById("cotizar-carro")
-  ?.addEventListener("click", registrarUsuario);
+  ?.addEventListener("click", solicitarCotizacion);

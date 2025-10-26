@@ -19,7 +19,7 @@ async function registrarUsuario(event) {
     };
 
     try{
-        const response = await fetch(`${API_URL_USUARIO}/usuarios`, {
+        const response = await fetch(`${API_URL_USUARIO}/registrar`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(usuario),
@@ -36,5 +36,5 @@ async function registrarUsuario(event) {
     }
 }
 document
-  .getElementById("registrar-usario")
+  .getElementById("registrar-usuario")
   ?.addEventListener("click", registrarUsuario);

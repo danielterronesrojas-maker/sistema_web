@@ -1,8 +1,8 @@
 import json
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from routes.routes_registro import registro_router
-from routes.routes_cotizacion import cotizacion_router
+from routes.registro import registro_router
+from routes.cotizacion import cotizacion_router
 
 app = FastAPI()
 app.include_router(registro_router)

@@ -1,5 +1,6 @@
 import json
-from fastapi import FastAPI, HTTPExeption
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
 import mysql
 from basededatos import get_db_connection
 import mysql.connector
@@ -26,25 +27,25 @@ async def registrar_usuario(registro: RegistroSchema):
             with open("usuario_actual.json", "w") as archivo:
                 json.dump({"id": pit}, archivo)
         except Exception as e:
-            raise HTTPExeption(status_code=500, detail=f"Error al guardar el ID del usuario: {str(e)}")
+            raise HTTPException(status_code=500, detail=f"Error al guardar el ID del usuario: {str(e)}")
         
         return {**registro.dict(), "id": pit}
 
     except mysql.connector.Error as e:
-        raise HTTPExeption(status_code=500, detail=f"Error de base de datos: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error de base de datos: {str(e)}")
 
 @registro_router.post("/obtener_id")
 async def obtener_id(paciente_id: PacienteIdSchema):
     try:
-        with open("usuario_actual.json", "w") as archivo:
+        with open("usuario_actual.json", "r") as archivo:
             data = json.load(archivo)
             return {"id": data.get("id")}
-    except Exeptiion as e:
-        raise HTTPExeption(status_code=500, detail=f"Error al leer el ID del usuario: {str(e)}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error al leer el ID del usuario: {str(e)}")
 
 @registro_router.get("/usuario_id_json")
 async def usuario_id_json():
     try:
         return FileResponse("usuario_actual.json", media_type="application/json")
     except FileNotFoundError:
-        raise HTTPExeption(status_code=404, detail="Archivo no encontrado")
+        raise HTTPException(status_code=404, detail="Archivo no encontrado")
