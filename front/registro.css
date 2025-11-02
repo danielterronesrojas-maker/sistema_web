@@ -179,7 +179,7 @@ form{
 
 input[type="text"],
 input[type="password"],
-input[type="correo"],
+input[type="email"],
 input[type="tel"],
 input[type="datetime-local"],
 textarea,
@@ -200,7 +200,7 @@ input[type="password"]{
     margin-bottom: 25px;
 }
 
-input[type="correo"]{
+input[type="email"]{
     margin-bottom: 25px;
 }
 

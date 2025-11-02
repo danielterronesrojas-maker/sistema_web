@@ -1,12 +1,12 @@
 import json
-from fastapi import FastAPI, HTTPException
+from fastapi import APIRouter, HTTPException
 from fastapi.responses import FileResponse
 import mysql
 from basededatos import get_db_connection
 import mysql.connector
 from schemes.schemes_registro import RegistroSchema, PacienteIdSchema
 
-registro_router = FastAPI()
+registro_router = APIRouter()
 
 @registro_router.post("/registrar")
 async def registrar_usuario(registro: RegistroSchema):
@@ -14,7 +14,7 @@ async def registrar_usuario(registro: RegistroSchema):
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute(
-            "INSERT INTO usuarios (nombre,contrasena,correo,telefono) VALUES (%s, %s, %s, %s)",
+            "INSERT INTO registros (nombre,contrasena,correo,telefono) VALUES (%s, %s, %s, %s)",
             (registro.nombre, registro.contrasena, registro.correo, registro.telefono)
         )
         conn.commit()

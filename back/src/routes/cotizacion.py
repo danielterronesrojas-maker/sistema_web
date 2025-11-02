@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 import mysql
 from basededatos import get_db_connection
 import mysql.connector
-from ..schemes.schemes_cotizacion import CotizacionSchema
+from schemes.schemes_cotizacion import CotizacionSchema
 import json
 
 cotizacion_router = APIRouter()

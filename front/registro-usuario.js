@@ -36,5 +36,5 @@ async function registrarUsuario(event) {
     }
 }
 document
-  .getElementById("registrar-usuario")
-  ?.addEventListener("click", registrarUsuario);
+  .getElementById("formulario-usuario")
+  ?.addEventListener("submit", registrarUsuario);
